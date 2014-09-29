@@ -25,7 +25,7 @@ simple.fill<-function(y) {
     v.below<-y[below]
     if(abs(v.above-360-v.below)<abs(v.above-v.below)) v.above<-v.above-360
     if(abs(v.above+360-v.below)<abs(v.above-v.below)) v.above<-v.above+360
-    if(abs(above-below)>10) next # Big difference - don't interpolate
+    if(abs(v.above-v.below)>10) next # Big difference - don't interpolate
     weight<-(above-i)/(above-below)
     y[i]<-v.below*weight+v.above*(1-weight)
     if(y[i]>180) y[i]<-y[i]-360
