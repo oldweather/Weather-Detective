@@ -39,8 +39,16 @@ foreach my $Ship (keys(%Imma)) {
     my $Fn = $Ship;
     $Fn =~ s/\s/_/g;
     open(DOUT,">../../imma/$Fn") or die "Can't open output for $Fn";
+    @{$Imma{$Ship}} = sort imma_by_date @{$Imma{$Ship}}; 
     foreach my $Ob (@{$Imma{$Ship}}) {
 	$Ob->write(\*DOUT);
     }
     close(DOUT);
+}
+
+sub imma_by_date {
+    return($a->{YR} <=> $b->{YR} ||
+           $a->{MO} <=> $b->{MO} ||
+           $a->{DY} <=> $b->{DY} ||
+	   $a->{HR} <=> $b->{HR});
 }
