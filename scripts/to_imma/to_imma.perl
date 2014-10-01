@@ -31,6 +31,10 @@ while(my $Line = <DIN>) {
     foreach my $Var(qw(YR MO DY HR LAT LON AT SLP W ID)) {
 	if($Ob->{$Var} eq 'NA') { $Ob->{$Var}=undef; }
     }
+
+    # Fix impossible years
+    if($Ob->{YR}>1903 || $Ob->{YR}<1889) { $Ob->{YR}=undef; }
+
     push @{$Imma{$Fields[3]}},$Ob;
 }
 close(DIN);
