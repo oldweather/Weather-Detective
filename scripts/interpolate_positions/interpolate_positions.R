@@ -1,8 +1,8 @@
 # For each URL, interpolate missing lats and longs using simple
 #  linear fits.
 
-c<-read.csv('../make_cannonical/cannonical.out',
-            fill=TRUE,header=FALSE,
+c<-read.csv('../check_dates/fixed.dates.out',
+            fill=TRUE,header=TRUE,
             na.strings='NULL',
             stringsAsFactors=FALSE)
 by.url<-split(c,c$V1)
