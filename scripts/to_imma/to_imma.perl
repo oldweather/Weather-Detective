@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Process digitised logbook data from Cook's Adventure obs into
+# Process digitised logbook data from Weather Detective records into
 #  IMMA records.
 
 use strict;
