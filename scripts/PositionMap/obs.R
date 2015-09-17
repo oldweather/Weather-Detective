@@ -49,7 +49,7 @@ Options<-WeatherMap.set.option(Options,'pole.lat',90)
 Options$ice.points<-50000
 land<-WeatherMap.get.land(Options)
 
-WD.obs<-read.csv('/Users/philip/Projects/WeatherDetective/scripts/interpolate_positions/interpolated.csv')
+WD.obs<-read.csv('/Users/philip/Projects/Weather-Detective/scripts/interpolate_positions/interpolated.csv')
 WD.obs$Year<-1894 #as.integer(substr(WD.obs$V2,1,4))
 WD.obs$Month<-as.integer(substr(WD.obs$V2,6,7))
 WD.obs$Day<-as.integer(substr(WD.obs$V2,9,10))
