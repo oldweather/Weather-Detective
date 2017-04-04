@@ -61,7 +61,7 @@ ch<-chron(dates=sprintf("%04d/%02d/%02d",WD.obs$Year,WD.obs$Month,WD.obs$Day),
 w<-which(!is.na(ch))
 WD.obs<-WD.obs[w,]
 WD.obs$ch<-ch[w]
-WD.obs.old<-read.csv('../interpolate_positions/interpolated.2015-09-15.csv')
+WD.obs.old<-read.csv('../interpolate_positions/interpolated.2016_06_23.csv')
 WD.obs.old$Year<-1894 #as.integer(substr(WD.obs$V2,1,4))
 WD.obs.old$Month<-as.integer(substr(WD.obs.old$V2,6,7))
 WD.obs.old$Day<-as.integer(substr(WD.obs.old$V2,9,10))

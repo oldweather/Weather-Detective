@@ -42,7 +42,8 @@ sub convert_units {
     #print "$Year $Month $Day $Hour\n";
     my $elon = $Original[11];
     #print "$elon\n";
-    if($elon eq 'NA') { return(); }
+    if(!defined($elon) || $elon eq 'NA') { return(); }
+    if( $elon < -180 || $elon > 360) { return(); }
     if ( $elon < 0 ) { $elon += 360; }
     unless(looks_like_number($elon)) {
         die "Bad longitude $elon";

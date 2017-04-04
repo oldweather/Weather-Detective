@@ -5,6 +5,9 @@ s<-read.csv('names.txt',fill=TRUE,header=FALSE,
 d<-read.csv('../../raw_data/Exports/result_all.csv',
             na.strings='NULL',
             stringsAsFactors=FALSE)
+names(d)<-c('IMAGE','RECORD.TYPE','YEAR','MONTH','DATE','TIME',
+            'THERMOMETER','BAROMETER','WIND.DIRECTION',
+            'WIND.FORCE','LATITUDE','LONGITUDE','NOTES')
 w<-which(d$RECORD.TYPE=='ship_name')
 d<-d[w,]
 n<-data.frame()

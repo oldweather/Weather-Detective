@@ -16,7 +16,7 @@ my %Names;
 open(DIN,"<../get_ship_names/ship.names.csv") or die;
 while(my $Line = <DIN>) {
     chomp($Line);
-    if($Line =~ /IMAGE/) { next; }
+    if($Line =~ /IMAGE|concat/) { next; }
     $Line =~ s/\"//g;
     my @Fields = split /,/,$Line;
     $Names{$Fields[1]}=$Fields[13];
